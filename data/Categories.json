@@ -1,0 +1,37 @@
+{
+  "analytics": [
+    "Free Plan",
+    "Realtime Analytics",
+    "Simple To Use",
+    "Privacy Friendly",
+    "Great For SaaS",
+    "User Journey Explorer",
+    "Automations",
+    "A/B Testing",
+    "Sells Your Data"
+  ],
+  "baas": [
+    "Auth",
+    "Third Party Auth",
+    "Realtime Database",
+    "Storage",
+    "Functions"
+  ],
+  "blog": [
+    "Paywall & Popups",
+    "Custom Domain",
+    "Markdown Editor",
+    "Syntax Highlighting",
+    "Dev Community",
+    "Blog Appearance & Customization",
+    "Automatic GitHub Backup",
+    "SEO Customization",
+    "Create Static Pages",
+    "Share Post Drafts",
+    "Email Newsletter",
+    "Dark Mode",
+    "Built-in Analytics",
+    "Embed Third-Party Widgets",
+    "Audio Blogs"
+  ]
+}

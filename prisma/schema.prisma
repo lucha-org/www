@@ -1,0 +1,22 @@
+generator client {
+    provider        = "prisma-client-js"
+    previewFeatures = ["referentialIntegrity"]
+}
+
+datasource db {
+    provider             = "mysql"
+    url                  = env("DATABASE_URL")
+    referentialIntegrity = "prisma"
+}
+
+model Wrestler {
+    id          Int      @id @unique
+    created_at  DateTime @default(now())
+    alias       String   @unique
+    slug        String   @unique
+    description String
+    social      Json
+    identity    String
+    category    String
+    tweets      Json
+}

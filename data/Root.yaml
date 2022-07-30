@@ -1,0 +1,107 @@
+analytics:
+  googleanalytics:
+    "Free Plan": true
+    "Realtime Analytics": true
+    "Simple To Use": false
+    "Privacy Friendly": false
+    "Great For SaaS": false
+    "User Journey Explorer": false
+    "Automations": false
+    "A/B Testing": true
+    "Sells Your Data": true
+
+  matomo:
+    "Free Plan": false
+    "Realtime Analytics": true
+    "Simple To Use": true
+    "Privacy Friendly": true
+    "Great For SaaS": true
+    "User Journey Explorer": true
+    "Automations": true
+    "A/B Testing": true
+    "Sells Your Data": true
+
+  splitbee:
+    "Free Plan": true
+    "Realtime Analytics": true
+    "Simple To Use": true
+    "Privacy Friendly": true
+    "Great For SaaS": true
+    "User Journey Explorer": true
+    "Automations": true
+    "A/B Testing": true
+    "Sells Your Data": false
+
+baas:
+  appwrite:
+    "Auth": true
+    "Third Party Auth": false
+    "Realtime Database": false
+    "Storage": false
+    "Functions": false
+
+  firebase:
+    "Auth": true
+    "Third Party Auth": false
+    "Realtime Database": true
+    "Storage": true
+    "Functions": true
+
+  supabase:
+    "Auth": true
+    "Third Party Auth": true
+    "Realtime Database": true
+    "Storage": true
+    "Functions": true
+
+blog:
+  ghost:
+    "Paywall & Popups": true
+    "Custom Domain": true
+    "Markdown Editor": true
+    "Syntax Highlighting": true
+    "Dev Community": true
+    "Blog Appearance & Customization": true
+    "Automatic GitHub Backup": true
+    "SEO Customization": true
+    "Create Static Pages": true
+    "Share Post Drafts": true
+    "Email Newsletter": true
+    "Dark Mode": true
+    "Built-in Analytics": true
+    "Embed Third-Party Widgets": true
+    "Audio Blogs": true
+
+  medium:
+    "Paywall & Popups": true
+    "Custom Domain": true
+    "Markdown Editor": true
+    "Syntax Highlighting": true
+    "Dev Community": true
+    "Blog Appearance & Customization": true
+    "Automatic GitHub Backup": true
+    "SEO Customization": true
+    "Create Static Pages": true
+    "Share Post Drafts": true
+    "Email Newsletter": true
+    "Dark Mode": true
+    "Built-in Analytics": true
+    "Embed Third-Party Widgets": true
+    "Audio Blogs": true
+
+  hashnode:
+    "Paywall & Popups": true
+    "Custom Domain": true
+    "Markdown Editor": true
+    "Syntax Highlighting": true
+    "Dev Community": true
+    "Blog Appearance & Customization": true
+    "Automatic GitHub Backup": true
+    "SEO Customization": true
+    "Create Static Pages": true
+    "Share Post Drafts": true
+    "Email Newsletter": true
+    "Dark Mode": true
+    "Built-in Analytics": true
+    "Embed Third-Party Widgets": true
+    "Audio Blogs": true
