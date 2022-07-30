@@ -5,7 +5,7 @@ import {
   HomeIcon,
   TwitterLogoIcon
 } from "@radix-ui/react-icons";
-import Comparision from "components/Comparision";
+import Comparision from "components/Comparison";
 import Tweets from "components/Testimonials";
 import MainLayout from "layouts/Parent";
 import { fetcher } from "lib/fetcher";
