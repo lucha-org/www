@@ -5,6 +5,9 @@ const nextConfig = {
   images: {
     domains: ["avatars.githubusercontent.com", "cdn.svgporn.com"],
   },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 };
 
 module.exports = nextConfig;
