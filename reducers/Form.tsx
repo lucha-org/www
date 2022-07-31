@@ -1,4 +1,4 @@
-import { SuperWrestler, CustomTweet } from "types/app";
+import { CustomTweet, SuperWrestler } from "types/app";
 
 export type ACTIONTYPE =
   | {
@@ -12,7 +12,7 @@ export type ACTIONTYPE =
   | { type: "SET_INDIE"; field: string; data: any }
   | { type: "PAYLOAD"; data: Partial<SuperWrestler> };
 
-export const init: SuperWrestler = {
+export const init: Partial<SuperWrestler> = {
   id: 1,
   category: "blog",
   identity: "",
@@ -28,7 +28,7 @@ export const init: SuperWrestler = {
   },
 };
 
-export const reducer = (state: SuperWrestler, action: ACTIONTYPE) => {
+export const reducer = (state: Partial<SuperWrestler>, action: ACTIONTYPE) => {
   switch (action.type) {
     case "ADD_TWEET":
       return {

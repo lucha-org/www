@@ -6,11 +6,11 @@ import type { GetServerSideProps } from "next";
 import { unstable_getServerSession } from "next-auth/next";
 import { useSession } from "next-auth/react";
 import { authOptions } from "pages/api/auth/[...nextauth]";
-import { useMemo, useState, useReducer, createContext, useEffect } from "react";
+import { createContext, useEffect, useMemo, useReducer } from "react";
+import { init, reducer, type ACTIONTYPE } from "reducers/Form";
 import useSWR from "swr";
 import { SuperWrestler } from "types/app";
 import type { Organization } from "types/octokit";
-import { init, reducer, type ACTIONTYPE } from "reducers/Form";
 
 interface iGlobalContext {
   mode: "init" | "edit";
@@ -40,7 +40,7 @@ const Submit = ({ hallOfFame, id, wrestler }: SubmitProps) => {
   );
 
   const toSubmit = useMemo(
-    () => orgs?.filter((org) => String(org.id) === id)[0],
+    () => orgs?.filter((org) => String(org.login) === id)[0],
     [orgs, id]
   );
 
@@ -88,10 +88,11 @@ export const getServerSideProps: GetServerSideProps = async ({
   }
 
   let wrestler;
-  let hallOfFame = false;
+  let hallOfFame = true;
 
   try {
-    wrestler = await fetch(ACTION + `/wrestlers/${params?.wrestler}`);
+    const resp = await fetch(ACTION + `/wrestlers/${params?.wrestler}`);
+    wrestler = await resp.json();
   } catch (error) {
     hallOfFame = false;
   }

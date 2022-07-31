@@ -15,8 +15,6 @@ const Form = () => {
   const { state: form, mode } = useContext(GlobalContext);
 
   const handleSubmit = async () => {
-    // alert(JSON.stringify(form));
-
     try {
       await fetch(ACTION + `/wrestlers/${form.id}`, {
         method: "PUT",

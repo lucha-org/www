@@ -5,7 +5,7 @@ import {
   HomeIcon,
   TwitterLogoIcon
 } from "@radix-ui/react-icons";
-import Comparision from "components/Comparison";
+import Table from "components/Comparison";
 import Tweets from "components/Testimonials";
 import MainLayout from "layouts/Parent";
 import { fetcher } from "lib/fetcher";
@@ -55,8 +55,6 @@ const Wrestler = ({ wrestlers }: WrestlerProps) => {
   const newWindow = (url: string) => window.open(url, "_blank");
 
   if (!first) return <p> Loading... </p>;
-  // const { data: rivals } = useSWR("/api/wrestlers", fetcher);
-  // const cols = Object.keys({ ...first.features, ... })
 
   return (
     <MainLayout>
@@ -69,11 +67,16 @@ const Wrestler = ({ wrestlers }: WrestlerProps) => {
           {Object.entries(first?.social as Object).map(
             ([media, value], index) => (
               <ActionIcon
-                variant="outline"
                 key={index}
+                color="blue"
+                variant="outline"
                 onClick={() =>
                   newWindow(
-                    SOCIAL[media as keyof typeof SOCIAL]["source"] + "/" + media
+                    media === "website"
+                      ? value
+                      : SOCIAL[media as keyof typeof SOCIAL]["source"] +
+                          "/" +
+                          value
                   )
                 }
               >
@@ -88,7 +91,7 @@ const Wrestler = ({ wrestlers }: WrestlerProps) => {
         </span>
       </Stack>
 
-      {second && <Comparision wrestlers={[first, second]} />}
+      {second && <Table wrestlers={[first, second]} />}
 
       <Tweets items={first.tweets as CustomTweet[]} />
 

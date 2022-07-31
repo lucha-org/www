@@ -9,7 +9,7 @@ const Card = ({ avatar_url, description, login, id }: CardProps) => {
   const { push } = useRouter();
 
   return (
-    <Container onClick={() => push(`/dashboard/${id}`)}>
+    <Container onClick={() => push(`/dashboard/${login}`)}>
       <Image
         alt="Logo"
         width={100}

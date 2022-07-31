@@ -57,7 +57,13 @@ const Features = () => {
             </SimpleGrid>
           ))
         ) : (
-          <span>Go {`https://github.com/${form.alias}`} to edit features</span>
+          <a
+            href={`https://github.com/${form.slug}/Luchador`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Edit Features
+          </a>
         )}
       </Stack>
     </>

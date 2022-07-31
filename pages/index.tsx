@@ -5,15 +5,17 @@ import Link from "next/link";
 import { useState } from "react";
 
 const Home = () => {
-  const [fight, setFight] = useState<string[]>(["", ""]);
   const [category, setCategory] = useState("blog");
+  const [fight, setFight] = useState<string[]>(["", ""]);
+
+  const [main, toCompare] = fight;
   const byCategory = WRESTLERS[category as keyof typeof WRESTLERS];
 
   return (
     <MainLayout>
       <Stack align="center" justify="center" sx={{ height: "90vh" }}>
         <h1 style={{ textAlign: "center", fontSize: "3rem", fontWeight: 700 }}>
-          Your Comparision Page Easy
+          Your Comparison Pages, Free.
         </h1>
 
         <Select
@@ -48,7 +50,7 @@ const Home = () => {
           />
         </Group>
 
-        <Link href={`/${fight[0]}/vs/${fight[1]}`} passHref>
+        <Link href={`/${main}/vs/${toCompare}`} passHref>
           <Button disabled={fight.length < 2} size="xl" color="red">
             Fight
           </Button>

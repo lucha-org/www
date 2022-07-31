@@ -32,13 +32,9 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       let feat = {};
       let wrestler;
 
-      if ("id" in query) {
-        query["id"] = Number(query["id"]);
-      }
-
       try {
         wrestler = await Prisma.wrestler.findUniqueOrThrow({
-          where: { ...query },
+          where: { slug },
         });
       } catch (error) {
         res.status(404).json({ code: 404, detail: "Wrestler Not Found" });
@@ -49,11 +45,16 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         feat = file[wrestler?.category as string][slug];
       } else {
         const { content } = await gitFetcher<File>(
-          `/repos/{}/Luchador/contents/FEATURES.yaml`,
+          `/repos/${slug}/Luchador/contents/FEATURES.yaml`,
           session?.accessToken as string
         );
-        const decoded = atob(content);
-        feat = YAML.parse(decoded);
+
+        try {
+          const decoded = atob(content);
+          feat = YAML.parse(decoded);
+        } catch (error) {
+          //
+        }
       }
 
       res.status(200).json({ ...wrestler, features: feat });
@@ -77,7 +78,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       };
 
       try {
-        await Prisma.wrestler.update({ where: { id: body.id }, data });
+        await Prisma.wrestler.update({ where: { id: data.id }, data });
       } catch (error) {
         await Prisma.wrestler.create({ data });
 
